@@ -6,9 +6,9 @@ import java.util.Map;
 
 record HealthResp(String status) {}
 
-@RestController
+@RestController //HTTP요청을 받는곳
 public class HealthController {
-    @GetMapping("/health")
+    @GetMapping("/health") //GET/health 들어오면 이 메서드 실행
     public HealthResp health() {
         return new HealthResp("ok");
     }
@@ -17,5 +17,6 @@ public class HealthController {
     public Map<String, String> ping() {
         return Map.of("pong", "ok");
     }
+
 }
 
